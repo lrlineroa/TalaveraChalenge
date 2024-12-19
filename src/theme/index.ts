@@ -1,4 +1,4 @@
-import {createTheme} from '@shopify/restyle';
+import {backgroundColor, createTheme} from '@shopify/restyle';
 
 const palette = {
   purpleLight: '#8C6FF7',
@@ -10,13 +10,14 @@ const palette = {
   greenDark: '#0A906E',
 
   black: '#0B0B0B',
-  white: '#F0F2F3',
+  white: '#FFFFFF',
 };
 
 const theme = createTheme({
   colors: {
     mainBackground: palette.white,
     cardPrimaryBackground: palette.purplePrimary,
+    
   },
   spacing: {
     s: 8,
@@ -27,16 +28,37 @@ const theme = createTheme({
   textVariants: {
     header: {
       fontWeight: 'bold',
-      fontSize: 34,
+      fontSize: 26,
     },
     body: {
       fontSize: 16,
       lineHeight: 24,
     },
+    buttonLabel:{
+      fontSize: 16,
+      lineHeight: 24,
+    },
+    bold:{
+      fontWeight: 'bold',
+    },
     defaults: {
-      // We can define a default text variant here.
     },
   },
+  cardVariants:{
+    defaults:{
+      margin: "xl",
+      alignSelf:"stretch",
+      backgroundColor:"mainBackground",
+      borderRadius:"l",
+      padding:"l"
+    }
+  },
+  borderRadii:{
+      s: 8,
+      m: 16,
+      l: 24,
+      xl: 40,
+  }
 });
 
 export type Theme = typeof theme;

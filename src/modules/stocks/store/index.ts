@@ -8,6 +8,7 @@ export const StocksStore:StocksModel={
     }),
     fetchStocks:thunk(async (actions)=>{
         try {
+            //Here goes the logic for a real stock fetching
             actions.setStocks(StocksData.stocks)
         } catch (error) {
             console.error("error at fetching stocks")
